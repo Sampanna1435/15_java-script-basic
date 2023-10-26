@@ -1,6 +1,25 @@
-# 15_java-script-basic
-## 10月26日
-  ///event
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button id="btn">ハンドラを起動する</button>
+    <button id="nonFunc">変数</button>
+
+    <script>
+        const btn = document.querySelector("#btn");
+        console.log(btn);
+
+        function showMessage() {
+            alert("ハンドラが起動しました!");
+        }
+        ///event
         //何に何をしたら、どうなる。
         //ボタンにクリックをしたら、アラートでる・
         btn.addEventListener("click", showMessange);
@@ -13,3 +32,8 @@
         window.addEventListener("resize", function () {
             //ここに処理を書きます。
             console.log("サイズが変わりました。");
+        });
+    </script>
+</body>
+
+</html>
