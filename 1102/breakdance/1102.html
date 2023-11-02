@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1 class="title"> title</h1>
+    <script>
+        const h1_element = document.querySelector("h1");
+
+        console.log(h1_element);
+
+        const has_result = (h1_element.hasAttribute("class"));
+        console.log(has_result);//true or false
+        //get attribute
+        const get_result = (h1_element.getAttribute("class"));
+        console.log(get_result);
+
+        h1_element.className = "title sitename";
+
+        //class list
+
+        h1_element.classlist.add("w-full");
+
+        ///classlist.remove
+        h1_element.classList.remove("sitename")
+
+
+        ///classlist.tggle
+        const body_element = document.body;
+        body_element.addEventListener("click", function () {
+            body_element.classList.add
+        });
+
+
+        ///classlist.contains
+        const contains_result = h1_element.classList.contains("sitename");
+        cconsole.log(contains_result);
+    </script>
+</body>
+
+</html>
