@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            height: 100vh;
+        }
+
+        .clickArea {
+            display: flex;
+            width: 100%;
+        }
+
+        .clickArea ol {
+            width: 50%;
+        }
+    </style>
+</head>
+
+<body>
+    <section>
+        <h1>左右どっち？</h1>
+        <div class="clickArea">
+            <ol class="leftZone"></ol>
+            <ol class="rightZone"></ol>
+        </div>
+    </section>
+    <script>
+        const widthsize = window.innerWidth;//現在のブラウザの横幅
+        console.log(widthsize);
+        //以下から記述していきます。
+        document.body.addEventListener("click", function (event) {
+            console.log(event.clientX);
+
+
+            if (widthsize / 2 >= event.clientX) {
+                console.log("左");
+                /* const list = document.createElement("li");*/
+                leftArea.insertAdjacentHTML("beforeend", "<li>左<li/>");
+            } else {
+                consoe.log("右");
+                rightAreainsertAdjacentHTML("beforeend", "<li>右<li/>");
+
+            }
+        });
+
+
+    </script>
+</body>
+
+</html>
