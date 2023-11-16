@@ -1,0 +1,19 @@
+document.addEventListener('DOMContentLoaded', function() {
+    // 要素の取得
+    const resultBtn = document.querySelector('button');
+    const resultArea = document.querySelector('.result');
+
+    // クリックイベントの設定
+    resultBtn.addEventListener('click', function() {
+        // numを添え字にしてwordの要素を取得
+        const num = Math.round(Math.random() * 4);
+        const selectedWord = word[num];
+
+        // 条件分岐で表示を切り替える
+        if (selectedWord === "JavaScript") {
+            resultArea.textContent = "JavaScript";
+        } else {
+            resultArea.textContent = "違う言語です";
+        }
+    });
+});
