@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>test6</title>
+</head>
+
+<body>
+    <h1 style="text-align: center;">48</h1>
+    <button style="margin: auto; display: block;">レッツゴー</button>
+    <script>
+        const akbsites = ["https://www.akb48.co.jp/", "https://www.ske48.co.jp/", "http://www.nmb48.com/", "http://www.hkt48.jp/"];
+        document.querySelector("button").addEventListener("click", function () {
+
+            const title = Math.floor(Math.random() * 4);
+
+            const h1Elm = document.querySelector("h1");
+            const alink = document.createElement("a");
+
+            alink.innerText = title + 1;
+
+            alink.setAttribute("href", akbsites[title]);
+
+            h1Elm.replaceChildren(alink);
+        });
+    </script>
+
+
+</body>
+
+</html>
