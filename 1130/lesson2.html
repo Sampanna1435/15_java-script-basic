@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>演習</title>
+</head>
+
+<body>
+    <script>
+        //関数の定
+        function kuku(num) {
+            for (let i = 0; i < 9; i++) {
+
+                console.log(num + "x" + (i + 1) + "=" + num * 1);
+            }
+        }
+        //関数の実行
+        kuku(5);
+
+        function shoeMessage(message) {
+            console.log("messange");
+        }
+        //関数式
+        const showMessage2 = function (message) {
+            console.log("メッセージ2");
+        }
+        //イベントで関数を使う
+        document.body.addEventListener("click",
+            function () {
+                showessage("こんにちは")
+            });
+    </script>
+</body>
+
+</html>
