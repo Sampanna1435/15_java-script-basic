@@ -174,7 +174,6 @@ HTMLの要素の取得について基本は、document.querySelector(セレク�
     <title>演習</title>
 </head>
 <body>
-</script>
 </body>
 </html>
 ```

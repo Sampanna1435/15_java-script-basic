@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>グローバル変数</title>
+</head>
+
+<body>
+    <h1>globalscope,localscope</h1>
+    <script>
+        //const globalData = "hogehoge";//グローバル変数
+        //const foobaa = function () {
+        //const localData = "fugafuga";//ローカル変数
+        // };
+
+        //console.log(globalData);//表示される
+        // console.log(localData); //エラー
+        const globalData = "hogehoge";//グローバル変数
+        const foobaa = function () {
+            const globalData = "fugafuga";//ローカル変数
+            console.log(globalData);//fugafugaローカルの変数
+        };
+        console.log(globalData);//hogehogeグローバルの変数
+        //関数の中だけでなく、{}(ブロック）内でしか使えません。
+        //外に出したい場合は、RETURN
+    </script>
+</body>
+
+</html>
