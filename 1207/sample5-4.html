@@ -2,10 +2,9 @@
 <html lang="ja">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>変数のスコープ</title>
 </head>
 
 <body>
@@ -25,25 +24,34 @@
             global = "グローバル変数を再代入";
             console.log(global);
 
-            //var global = "グローバル変数を再定義";
-            //console.log(global);
-        }
+            var global = "グローバル変数を再定義";
+            console.log(global);
+        };
 
         if (global) {
             var local2 = "varは関数スコープ";
             let local3 = "letはブロックスコープ";
         }
-        //関数funcの呼び出し(実行)
+
+        //関数funcの呼び出し（実行）
         func();
         //グローバルはvar global = "グローバル変数を再定義";で再定義されているので、undefinedになる。
         //グローバル変数の表示
         console.log(global);
         //ローカル変数の表示は、関数funcの中で定義されているので、呼び出せない。
-        //console.log(local);
+
         //varは関数スコープなので、if文の外で呼び出せる。
         console.log(local2);
         //letはブロックスコープなので、if文の外で呼び出せない。
         console.log(local3);
+
+        //ローカル変数の表示は、関数funcの中で定義されているので、呼び出せない。
+        console.log(local);
+
+        const slideShow = function (func) {
+            setInterval(func, 2000);
+        };
+        slideShow(nextBtnClick);
     </script>
 </body>
 

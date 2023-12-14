@@ -1,3 +1,92 @@
+## 12月14日
+```js
+//2秒で切り替わる
+        const slideShow = function (func) {
+            setInterval(func, 2000);
+        };
+        slideShow(nextStep);
+```
+```js
+ // ここに関数animalsRunを作成してください。
+        const animalsRun = function (list) {
+            console.log(list);
+            for (let i = 0; i < list.length; i++) {
+                console.log(animalSpeed[i], list[i]);
+                list[i].classList.add("run");
+                list[i].style.transitionDuration = animalSpeed[i] + "s";
+            }
+
+
+        };
+        `
+
+  ```js
+      //関数式２の実行(引数１＝配列，引数２＝関数の名前）
+        useConcatenate(nameParam, concatenateSpace);
+
+        //結合結果：中田 雄二
+
+        //基本的なコールバックの実行方法
+        //関数１
+        //関数の実行後すぐに表示
+        const testFunc = function (func) {
+            console.log("testFuncが実行されました");
+            //2秒後、実行
+            setTimeout(function () {
+                func();
+            }, 2000);
+        };
+        //関数２
+        const callback = function () {
+            console.log("callbackが実行されました");
+        };
+        //何を似していますか？
+        //関数式１を実行しています。
+        //callbackは関数式２の関数名です
+        testFunc(callback);
+  ```
+  ```js
+   //来の関数式
+        const dog = function () {
+            return "わんわん";
+        }
+        //関数の定義
+        function dog2() {
+            return "バウワウ";
+        }
+
+        //関数ドックを実行しています。
+        console.log(dog());//わんわん
+
+        //アロー関数の関数式　アロー関数は関数式で使う
+        console.log(dog());//わんわん
+        console.log(dog2());//バウワウ
+
+
+        const cat = () => {
+            return ("にゃーにゃー");
+        }
+        //関数catの実行＝（）があるから
+        console.log(cat())
+        //鳴きからを決めたい アロー関数＋引数
+        const animal = (voice) => {
+            return voice;
+        }
+
+        //関数のanimalの実行
+        //ミャアミャア
+        console.log(animal("みゃあみゃあ"));
+        //thisは予約語なので変数名、関数名に使えない
+        const thisElm = document.querySelector("p");
+        console.log(thisElm);
+
+        thisElm.addEventListener("click", (e) => {
+            console.log("クリック");
+            //console.log(this.textContent);
+            console.log(e.target.innerText);
+        });
+  ```
+
 ## 10月19日
 
 - コレクション（配列）
