@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>object</title>
+</head>
+
+<body>
+    <script>
+        const person = {
+            name: "",
+            age: 0,
+            infomation: function () {
+                return "名前:" + this.name + "\n年齢:" + this.age;
+            }
+        }
+        // プロパティの値を代入
+        person.name = "山田太郎";
+        person.age = 18;
+
+        ///console.log(person.name, person.age)
+        ///console.log(person.information());
+
+        const myCar_list = {}; //空のオブジェクトを作成
+        myCar_list.make = "Ford";
+        myCar_list.model = "Mustang";
+        myCar_list.year = 1969;
+        console.log(myCar_list);
+        //{make: 'Ford', model: 'Mustang', year: 1969}
+        //model
+
+        console.log(myCar_list.model, myCar_list.year);
+
+        ///year
+        ///console.log(myCar_list.year);
+        //{2021:'51年', make: 'Ford', model: 'Mustang', year: 1969}
+        myCar_list["2021"] = "51年";
+        console.log(myCar_list["2021"]);
+
+        ///
+        const dict = {
+            apple: "りんご",
+            banana: "バナナ",
+            orange: "オレンジ",
+        };
+
+        dict.grape = "ぶどう";
+
+
+        delete dict.orange;
+        console.log(dict);
+
+        dict.apple = "りんご";
+        console.log(dict);
+
+        ///{apple: "りんご", banana: "バナナ",orange: "オレンジ"}
+
+
+    </script>
+</body>
+
+</html>
