@@ -1,3 +1,83 @@
+## １月１８日
+
+,,,js
+    <h1>GAFAMの一覧</h1>
+
+    <table class="table_gafam">
+        <tr>
+            <th>名前</th>
+            <th>運営会社</th>
+            <th>創立年</th>
+            <th>URL</th>
+        </tr>
+    </table>
+    <script>
+        const corporation = [
+            {
+                name: "Google",
+                company: "Alphabet Inc.",
+                founding: 1998,
+                url: "https://www.abc.xyz/",
+            },
+            {
+                name: "Apple",
+                company: "Apple Inc.",
+                founding: 1976,
+                url: "https://www.apple.com/",
+            },
+            {
+                name: "Facebook",
+                company: "Facebook, Inc.",
+                founding: 2004,
+                url: "https://www.meta.com/",
+            },
+            {
+                name: "Amazon",
+                company: "Amazon.com, Inc.",
+                founding: 1994,
+                url: "https://www.amazon.com",
+            },
+            {
+                name: "Microsoft",
+                company: "Microsoft Corporation",
+                founding: 1975,
+                url: "https://www.microsoft.com/",
+            },
+        ];
+
+        const tableElm = document.querySelector(".table_gafam");
+
+        for (let co of corpration) {
+            const trElm = document.createElement("tr");
+            console.log(co);
+            tableElm.appendChild(trElm);
+            for (let key in co) {
+                console.log(key);
+                const tdElm = document.createElement("td");
+                tdElm.innerHTML = co[key]
+                trElm.appendChild(tdElm);
+            }
+            tableElm.appendChild(trElm);
+        }
+
+        for (let i = 0; i < corporation.longth; i++) {
+
+        }
+
+
+        //練習問題4-1 p183
+
+        let array = [];
+        array.push(1);
+        array.push(2);
+        array.push(3);
+
+        for (elem of array) {
+            console.log(elem);
+        }
+    </script>
+'''js
+
 ## 12月14日
 ```js
 //2秒で切り替わる

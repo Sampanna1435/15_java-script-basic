@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>配列</title>
+</head>
+
+<body>
+    <ul>
+        <li>りんご</li>
+        <li>みかん</li>
+        <li>パイナップル</li>
+    </ul>
+    <script>
+        const animals = ["dog", "cat", "bird"];
+        animals[2] = "lion";
+        console.log(animals);
+
+        animals.push("tiger");
+        console.log(animals.length);///4
+        console.log(animals);
+        ///nodelist and html collection , heiretu dont use convinence method
+        const fruits = document.querySelcetroAll("li");
+        console.log(fruits);
+       /// fruits.push("<li>いちご</li>")
+
+    </script>
+
+    <ul class="junishi"></ul>
+    <script>
+        const junishi = ["丑", "寅", "卯", "辰", "巳", "午", "未", "申", "酉", "戌"];
+        const twopieces = ["子", "亥"];
+        const junishis = document.querySelector(".junishis");
+
+        //配列junishiにと
+        junishi.shift(twopieces.pop());
+        junishi.push(twopieces.shift());
+
+        console.log(junishi);
+
+        for (eto of junishi) {
+            const list = document.createElement("li");
+            list.innerHTML = eto;
+            junishis.appendChild(list);
+        }
+
+
+        const staff = [
+            ["佐藤", 41, "東京"],
+            ["鈴木", 25, "大阪"],
+            ["林", 34, "札幌"],
+        ];
+
+        // すべての要素を取得して console に表示する。
+        for (let i = 0; i < staff.length; i++) {
+            /// for (let j = 0; j < staff[i].length; j++) {
+            console.log(staff[i][0]);
+            for (let j = 0; j < staff[i].length; j++) {
+                console.log(staff[i][j]);
+                ///jの次はkを使う
+
+
+            }
+        }
+    </script>
+</body>
+
+</html>
