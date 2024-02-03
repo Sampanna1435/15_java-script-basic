@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>text </title>
+    <style>
+        .modal {
+            transition: all 1s ease-in;
+            opacity: 0;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #eee;
+            border: 1px solid #cdcdcd;
+            padding: 1rem;
+        }
+
+        .modal.active {
+            opacity: 1;
+        }
+
+        .tabcontent.show {
+            display: block;
+        }
+
+        .tabcontent {
+            display: none;
+        }
+
+        .tabcontent.show {
+            display: block;
+        }
+
+        .tabcontent {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>三大栄養素</h1>
+    <ul>
+        <li class="protein">たんぱく質</li>
+        <li class="fats">脂質</li>
+        <li class="carbohydrate">炭水化物</li>
+    </ul>
+
+    <div class="counter">
+        <button class="decrease">-</button>
+        <span class="count">0</span>
+        <button class="increase">+</button>
+    </div>
+    <button id="openModalBtn">Open Modal</button>
+
+    <div class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <p>モーダルウィンドウです。</p>
+        </div>
+    </div>
+    <div class="tab">
+        <button class="tablinks">Tab1</button>
+        <button class="tablinks">Tab2</button>
+        <button class="tablinks">Tab3</button>
+    </div>
+
+    <div class="tabcontent show">
+        <h3>Tab1</h3>
+        <p>タブ1のコンテンツです。</p>
+    </div>
+    <div class="tabcontent">
+        <h3>Tab2</h3>
+        <p>タブ2のコンテンツです。</p>
+    </div>
+    <div class="tabcontent">
+        <h3>Tab3</h3>
+        <p>タブ3のコンテンツです。</p>
+    </div>
+    <ul class="list">
+        <li>バナナ</li>
+        <li>りんご</li>
+        <li>みかん</li>
+        <li>パイナップル</li>
+    </ul>
+    <button class="resultBtn">結果を表示</button>
+    <ul class="result"></ul>
+
+    <ul class="weather">
+        <li>晴れ</li>
+        <li>曇り</li>
+        <li>雨</li>
+        <li>雪</li>
+    </ul>
+    <p class="opinion"></p>
+
+
+
+    <script>
+        const name = "大谷翔平の";
+        const number = "背番号は";
+        const num = "20";
+        const two = 2;
+        const seven = 7;
+        const ending = "です。"
+        const ohtaniText = document.createElement("p");
+        ohtaniText.textContent = name + number + (two * seven) + ending;
+        document.body.appendChild(ohtaniText);
+    </script>
+    <script>
+        const pinkBlue = [
+            "ピンクブルー",
+            "Starry Drama",
+            "ジブンセイフク",
+            "あうん",
+            "ミチヲユケ",
+            "うそつき",
+            "陽はまた昇るから",
+            "湿気っている",
+            "Don!! White Rabbit",
+            "さもなくば誰がやる",
+            "Slow dance"
+        ];
+
+        const michiWoYukeText = document.createElement("p");
+        michiWoYukeText.textContent = pinkBlue[4];
+        document.body.appendChild(michiWoYukeText);
+    </script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const decreaseButton = document.querySelector('.decrease');
+            const increaseButton = document.querySelector('.increase');
+            const countElement = document.querySelector('.count');
+            let count = 0;
+            countElement.textContent = count;
+
+            decreaseButton.addEventListener('click', function () {
+                if (count > 0) {
+                    count = count - 1;
+                    countElement.textContent = count;
+                }
+            });
+
+            increaseButton.addEventListener('click', function () {
+                count += 1;
+                countElement.textContent = count;
+            });
+        });
+    </script>
+
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const openModalBtn = document.getElementById('openModalBtn');
+            const modal = document.querySelector('.modal');
+            const closeModalBtn = document.querySelector('.close');
+
+            openModalBtn.addEventListener('click', function () {
+                modal.classList.add('active');
+            });
+
+            closeModalBtn.addEventListener('click', function () {
+                modal.classList.remove('active');
+            });
+        });
+    </script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            var tabButtons = document.querySelectorAll('.tablinks');
+            var tabContents = document.querySelectorAll('.tabcontent');
+
+            tabButtons.forEach(function (button, index) {
+                button.addEventListener('click', function () {
+                    tabContents.forEach(function (content) {
+                        content.classList.remove('show');
+                    });
+                    tabButtons.forEach(function (btn) {
+                        btn.classList.remove('active');
+                    });
+                    tabContents[index].classList.add('show');
+
+                    button.classList.add('active');
+                });
+            });
+        });
+
+    </script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const fruitsArray = ["キウイ", "パパイヤ", "マンゴー"];
+            const listItems = document.querySelectorAll('.list li');
+            const resultButton = document.querySelector('.result');
+            const resultContainer = document.querySelector('.result');
+
+            resultContainer.innerHTML = `<li>${fruitsArray.join('</li><li>')}</li>`;
+
+            for (const item of listItems) {
+                item.addEventListener('click', function () {
+                    const selectedFruit = item.textContent;
+                    fruitsArray.push(selectedFruit);
+                });
+            }
+
+            resultButton.addEventListener('click', function () {
+                resultContainer.innerHTML = `<li>${fruitsArray.join('</li><li>')}</li>`;
+            });
+        });
+    </script>
+
+    <script>
+        function say(weather) {
+            const opinion = document.querySelector(".opinion");
+
+            if (weather === "晴れ") {
+                opinion.textContent = "今日は良い天気で、気持ちが良いです。";
+            } else if (weather === "雨") {
+                opinion.textContent = "雨音が心地よく、静かな時間を楽しめます。";
+            } else if (weather === "曇り") {
+                opinion.textContent = "曇り空、穏やかな一日が待っている感じです。";
+            } else if (weather === "雪") {
+                opinion.textContent = "雪景色が美しく、雪合戦やスキーに最適です。";
+            } else {
+                opinion.textContent = "選択された天気に関する情報はありません。";
+            }
+        }
+
+        const weathers = document.querySelectorAll(".weather li");
+
+        for (const word of weathers) {
+            word.addEventListener("click", () => {
+                say(word.textContent);
+            });
+        }
+    </script>
+
+    <script>
+        const user = {
+            name: "鈴木花子",
+            age: 19,
+            gender: "女性",
+            email: "suzukihanako@example.com",
+            isAdmin: false,
+            address: {
+                street: "名古屋市中区栄1-2-3",
+                city: "名古屋市",
+                prefecture: "愛知県",
+                zipCode: "460-0008",
+            },
+            phoneNumbers: ["052-1234-5678", "070-9876-5432"],
+            hobbies: ["音楽鑑賞", "ショッピング", "カフェ巡り"],
+            birthday: new Date(2004, 0, 15), // 誕生日を YYYY, MM - 1, DD 形式で設定
+            accountBalance: 500.5,
+            preferredLanguages: ["日本語"],
+            subscriptionStatus: "アクティブ",
+            school: "名古屋市立高校",
+        };
+
+        console.log("性別: " + user.gender);
+        console.log("住所: " + user.address.city);
+        const birthday = user.birthday.getFullYear() + "年" + (user.birthday.getMonth() + 1) + "月" + user.birthday.getDate() + "日";
+        console.log("誕生日: " + birthday);
+        console.log("趣味: " + user.hobbies.includes("カフェ巡り"));
+        const addressString = user.address.zipCode + " " + user.address.prefecture + user.address.city + user.address.street;
+        console.log("住所: " + addressString);
+
+    </script>
+
+    <script>
+        const cat = {
+            show: function () {
+                const imgElement = document.createElement("img");
+                imgElement.src = "cat.jpg";
+                imgElement.alt = "Cute Cat";
+                document.body.appendChild(imgElement);
+            }
+        };
+
+        cat.show();
+    </script>
+
+
+
+
+
+
+</body>
+
+</html>
